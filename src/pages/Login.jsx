@@ -15,7 +15,10 @@ const Login = () => {
     event.preventDefault();
 
     await axios
-      .post("http://172.16.33.128:5001/api/user/login", { name, password })
+      .post(
+        "https://bj-todo-server-2c84y09e3-alex-shostka.vercel.app/api/user/login",
+        { name, password }
+      )
       .then(({ data }) => {
         if (data.token) {
           setIsAuth(true);
